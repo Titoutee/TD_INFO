@@ -1,9 +1,10 @@
 % Lancer_tests.m
 %
-% Séance 1
+% Séance 2
 
 close all
 
-Test_Calcul_centre_de_gravite
-Test_Calcul_normale_triangle
-Test_Affichage_verification
+Test_Test_triangle_tourne_vers_source
+Test_Calcul_eclairement_triangle
+Test_Affichage_objet_eclaire
+Script_sans_ombre

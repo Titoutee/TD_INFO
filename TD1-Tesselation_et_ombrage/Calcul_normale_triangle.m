@@ -19,6 +19,6 @@ AB = B-A;
 
 Normale = cross(AB,AC);
 
-Normale = Normale/norm(Normale);
+Normale = Normale/norm(Normale); % Normaliser la normale (norme = 1)
 
 end
