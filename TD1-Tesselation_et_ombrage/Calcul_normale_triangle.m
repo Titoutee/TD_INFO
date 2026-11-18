@@ -1,13 +1,13 @@
 function Normale = Calcul_normale_triangle(A, B, C)
-% Normale = calcul_normale(A, B, C)
+% Normale = Calcul_normale_triangle(A, B, C)
 %
 % Calcule les coordonnées de la normale au triangle ABC
 %
-% Entrees :
+% Entrées :
 % - A, B et C sont des vecteurs (1 x 3)
 %
 % Sortie :
-% - Normale est un vecteur (1 x 3) correspondant a la normale de norme 1 au
+% - Normale est un vecteur (1 x 3) correspondant à la normale de norme 1 au
 % triangle ABC
 % 
 % Version : 1.0
@@ -19,6 +19,6 @@ AB = B-A;
 
 Normale = cross(AB,AC);
 
-Normale = Normale/norm(Normale); % Normaliser la normale (norme = 1)
+Normale = Normale/norm(Normale);
 
 end

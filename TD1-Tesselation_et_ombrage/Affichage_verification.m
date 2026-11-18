@@ -22,10 +22,8 @@ for i = 1:size(Triangles,1)
     A = Sommets(Triangles(i,1),:);
     B = Sommets(Triangles(i,2),:);
     C = Sommets(Triangles(i,3),:);
-
     G = Calcul_centre_de_gravite(A, B, C);
     N = Calcul_normale_triangle(A, B, C);
-    
     quiver3(G(1), G(2), G(3), N(1), N(2), N(3))
 end
 axis equal 
