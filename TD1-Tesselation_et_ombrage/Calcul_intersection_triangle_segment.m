@@ -27,7 +27,7 @@ N = Calcul_normale_triangle(A,B,C);
 dir = P2-P1;
 den = dot(N,dir);
 
-if( abs(den)>eps) % sinon c'est que le segment est // au plan du triangle
+if( abs(den)>eps ) % sinon c'est que le segment est // au plan du triangle
 
     t = dot(N,(A-P1)) / den;
     if( t>=0 && t<=1) % sinon c'est que l'intersection est avant P1 ou après P2

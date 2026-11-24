@@ -1,4 +1,4 @@
-function E = Calcul_eclairement_triangle(A, B, C, Source)
+ function E = Calcul_eclairement_triangle(A, B, C, Source)
 % E = Calcul_eclairement_triangle(A, B, C, Source)
 %
 % Calcul un éclairement direct normalisé

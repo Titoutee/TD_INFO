@@ -1,52 +1,52 @@
 function [Tri, Som] = Tessellation_une_fois(n, Triangles, Sommets)
 % [Tri, Som] = Tessellation_une_fois(n, Triangles, Sommets)
 %
-% Fonction qui "tesselle une fois" un triangle donnÃ©, c'est-Ã -dire qui 
-% renvoie quatre triangles obtenus en coupant le triangle donnÃ© par les
-% milieux de ses cÃ´tÃ©s.
+% Fonction qui "tesselle une fois" un triangle donné, c'est-à-dire qui 
+% renvoie quatre triangles obtenus en coupant le triangle donné par les
+% milieux de ses côtés.
 %
-% EntrÃ©es :
-% - Sommets : matrice Ã Â trois colonnes [nb_Sommets x 3], 
-% dans laquelle se trouvent des coordonnÃ©es de sommets.
-% - Triangles : matrice Ã Â trois colonnes [nb_Triangles x 3], oÃ¹ chaque ligne
-% contient trois entiers strictements positifs Ã©tant les trois numÃ©ros de 
-% ligne de la matrice Sommets contenant les coordonnÃ©es des sommets du
+% Entrées :
+% - Sommets : matrice à trois colonnes [nb_Sommets x 3], 
+% dans laquelle se trouvent des coordonnées de sommets.
+% - Triangles : matrice à trois colonnes [nb_Triangles x 3], où chaque ligne
+% contient trois entiers strictements positifs étant les trois numéros de 
+% ligne de la matrice Sommets contenant les coordonnées des sommets du
 % triangle en question.
-% - n : entier, numÃ©ro de ligne de la matrice Triangles, c'est la rÃ©fÃ©rence
+% - n : entier, numéro de ligne de la matrice Triangles, c'est la référence
 % du triangle qu'on va tesseller une fois.
 %
 % Sorties :
-% - Som : matrice 6 lignes, 3 colonnes, contenant les coordonnÃ©es des six 
+% - Som : matrice 6 lignes, 3 colonnes, contenant les coordonnées des six 
 % sommets des nouveaux triangles (trois sommets de l'ancien, trois
 % milieux).
-% - Tri : matrice 4 lignes, 3 colonnes, contenant les triplets de numÃ©ros de
-% sommets de la matrice Som dÃ©finisssant les quatre nouveaux triangles.
-% On part du principe que les triangles sont repÃ©rÃ©s dans le sens horaire.
+% - Tri : matrice 4 lignes, 3 colonnes, contenant les triplets de numéros de
+% sommets de la matrice Som définisssant les quatre nouveaux triangles.
+% On part du principe que les triangles sont repérés dans le sens horaire.
 % 
 % Version 1.2
 % Auteurs : Stanislas Antczak, Lucile Fraisse, Alice Gaboriau
 
-% DÃ©finition des points A B C sommets du grand triangle
+% Définition des points A B C sommets du grand triangle
 mon_triangle = Triangles(n,:);
 A = Sommets(mon_triangle(1),:);
 B = Sommets(mon_triangle(2),:);
 C = Sommets(mon_triangle(3),:);
 
-% Calcul des points milieux des cÃ´tÃ©s du grand triangle
+% Calcul des points milieux des côtés du grand triangle
 a = (B+C)/2;  % a milieu de [BC]
 b = (A+C)/2;  % b milieu de [AC]
 c = (A+B)/2;  % c milieu de [AB]
 
-% DÃ©finition de la matrice additionnelle de sommets
+% Définition de la matrice additionnelle de sommets
 Som = [a;b;c];
 
 % Nombre de sommets avant ajout
 nb_Sommets = size(Sommets,1);
 
-% DÃ©finition de la matrice additionnelle de triangles
+% Définition de la matrice additionnelle de triangles
 Tri = [mon_triangle(1),nb_Sommets+3,nb_Sommets+2;     % triangle acb
-    mon_triangle(2),nb_Sommets+1,nb_Sommets+3;     % triangle bac
-    mon_triangle(3),nb_Sommets+2,nb_Sommets+1;     % triangle cba
-    nb_Sommets+1,nb_Sommets+2,nb_Sommets+3];       % triangle abc
+       mon_triangle(2),nb_Sommets+1,nb_Sommets+3;     % triangle bac
+       mon_triangle(3),nb_Sommets+2,nb_Sommets+1;     % triangle cba
+       nb_Sommets+1,nb_Sommets+2,nb_Sommets+3];       % triangle abc
 end
 

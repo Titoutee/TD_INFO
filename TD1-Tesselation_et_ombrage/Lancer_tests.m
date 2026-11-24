@@ -6,3 +6,7 @@ close all
 
 Test_Calcul_intersection_triangle_segment
 Test_Calcul_intersection_objet
+Test_Calcul_centre_de_gravite
+Test_Calcul_eclairement_triangle
+Test_Tessellation_Une_Fois
+Test_Calcul_normale_triangle

@@ -24,6 +24,16 @@ view([-160  30])
 title('Scène initiale')
 drawnow
 
+%% Tesselle ave aire maximale des triangles spécifiée
+
+aire = 0.001;
+[Triangles,Sommets] = Tessellation(Triangles,Sommets,aire);
+
+Affichage_verification(Sommets,Triangles,Source);
+view([-160  30])
+title('Scène tessellée')
+drawnow
+
 %% Boucle principale
 
 nb_Triangles = size(Triangles,1);
